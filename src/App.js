@@ -18,7 +18,7 @@ function App() {
   const [search, setSearch] = useState("")
 
   useEffect(() =>{
-    fetch('http://localhost:8080/api/jobopps')
+    fetch('https://damp-headland-63145.herokuapp.com/api/jobopps')
       .then(resp => resp.json())
       .then(data => {
         setAllJobOpps(data)
@@ -36,7 +36,7 @@ function App() {
   function handleAdd(e, job) {
     e.preventDefault()
     newCandidate.joboppId = job.id
-    fetch(`http://localhost:8080/api/candidates`, {
+    fetch(`https://damp-headland-63145.herokuapp.com/api/candidates`, {
         method: "POST",
         headers: {
             "Content-Type": "application/json",
